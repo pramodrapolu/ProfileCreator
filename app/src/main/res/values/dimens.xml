@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_text_size">24sp</dimen>
+    <dimen name="header_margin_start">20dp</dimen>
+    <dimen name="header_margin_top">20dp</dimen>
+
+    <dimen name="help_text_size">16sp</dimen>
+    <dimen name="help_text_margin_start">20dp</dimen>
+    <dimen name="help_text_margin_top">10dp</dimen>
+
+    <dimen name="avatar_view_width">120dp</dimen>
+    <dimen name="avatar_view_height">160dp</dimen>
+    <dimen name="avatar_view_margin_top">20dp</dimen>
+    <dimen name="avatar_view_margin_bottom">10dp</dimen>
+
+    <dimen name="corner_radius">15dp</dimen>
+</resources>

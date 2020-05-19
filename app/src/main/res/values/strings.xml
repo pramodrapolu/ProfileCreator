@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ProfileCreator</string>
+
+    <string name="profile_creation">Profile Creation</string>
+    <string name="creation_help_text">Use the form below to submit your portfolio. An email and password are required.</string>
+    <string name="tap_text">Tap to add\navatar</string>
+    <string name="profile_picture">Profile picture</string>
 </resources>
