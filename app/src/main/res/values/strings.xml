@@ -5,4 +5,10 @@
     <string name="creation_help_text">Use the form below to submit your portfolio. An email and password are required.</string>
     <string name="tap_text">Tap to add\navatar</string>
     <string name="profile_picture">Profile picture</string>
+
+    <string name="first_name_hint">First name</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="website_hint">Website</string>
+    <string name="submit_text">Submit</string>
 </resources>

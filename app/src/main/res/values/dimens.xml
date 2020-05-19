@@ -14,4 +14,15 @@
     <dimen name="avatar_view_margin_bottom">10dp</dimen>
 
     <dimen name="corner_radius">15dp</dimen>
+
+    <dimen name="input_fields_width">220dp</dimen>
+    <dimen name="input_fields_height">40dp</dimen>
+    <dimen name="input_field_hint_text_size">14sp</dimen>
+    <dimen name="input_fields_padding">10dp</dimen>
+    <dimen name="input_fields_top_margin">10dp</dimen>
+    <dimen name="input_field_stroke">1dp</dimen>
+
+    <dimen name="button_width">220dp</dimen>
+    <dimen name="button_marging_bottom">50dp</dimen>
+    <dimen name="button_border_stroke">1dp</dimen>
 </resources>
