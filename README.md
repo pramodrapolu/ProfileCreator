@@ -11,3 +11,4 @@ Used Android Architecture components like ViewModels, LiveData
 
 Also used ContraintLayouts so that views scales on different devices.
 
+Used Glide library to load the pictures into the view easily. It handles the orientation/resizing of the pictures which was the main reason I had to use it.
