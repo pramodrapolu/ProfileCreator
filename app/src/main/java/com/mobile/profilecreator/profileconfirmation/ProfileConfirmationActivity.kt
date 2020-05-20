@@ -54,12 +54,12 @@ class ProfileConfirmationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_confirmation)
 
+        overridePendingTransition(R.anim.slide_in_left, R.anim.no_transition_change)
+
         val avatarPath = intent.extras?.getString(AVATAR_PATH)
         val firstName = intent.extras?.getString(FIRST_NAME)
         val emailAddress = intent.extras?.getString(EMAIL_ADDRESS)
         val website = intent.extras?.getString(WEBSITE)
-
-        overridePendingTransition(R.anim.slide_in_left, R.anim.no_transition_change)
 
         initViews()
 
