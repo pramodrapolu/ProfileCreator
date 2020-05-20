@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mobile.profilecreator">
 
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
@@ -15,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ProfileCreationActivity">
+        <activity android:name=".profilecreation.ProfileCreationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

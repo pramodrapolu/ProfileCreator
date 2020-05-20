@@ -1,4 +1,4 @@
-package com.mobile.profilecreator
+package com.mobile.profilecreator.profilecreation
 
 import android.Manifest
 import android.app.Activity
@@ -18,6 +18,7 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.mobile.profilecreator.R
 import com.mobile.profilecreator.utils.Utils
 import java.io.File
 import java.io.IOException
@@ -133,7 +134,8 @@ class ProfileCreationViewModel : ViewModel() {
     private fun requestPermissionForCamera(context: Activity) {
         ActivityCompat.requestPermissions(context,
             arrayOf(Manifest.permission.CAMERA),
-            REQUEST_CAMERA_PERMISSION)
+            REQUEST_CAMERA_PERMISSION
+        )
     }
 
     private fun startCamera(context: Activity) {
@@ -152,11 +154,13 @@ class ProfileCreationViewModel : ViewModel() {
                 photoFile?.also { file ->
                     val photoURI: Uri = FileProvider.getUriForFile(
                             context,
-                            FILE_PROVIDER_AUTHORITY,
+                        FILE_PROVIDER_AUTHORITY,
                             file
                     )
                     captureImageIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    context.startActivityForResult(captureImageIntent, REQUEST_TAKE_PHOTO)
+                    context.startActivityForResult(captureImageIntent,
+                        REQUEST_TAKE_PHOTO
+                    )
                 }
             }
         }
@@ -167,8 +171,8 @@ class ProfileCreationViewModel : ViewModel() {
         // Create an image file name
         val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(
-                PROFILE_PIC_NAME,
-                PROFILE_PIC_FORMAT,
+            PROFILE_PIC_NAME,
+            PROFILE_PIC_FORMAT,
                 storageDir
         ).apply {
             // Save a file: path for use with ACTION_VIEW intents

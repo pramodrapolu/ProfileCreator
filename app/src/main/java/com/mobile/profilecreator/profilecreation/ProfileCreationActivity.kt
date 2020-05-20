@@ -1,4 +1,4 @@
-package com.mobile.profilecreator
+package com.mobile.profilecreator.profilecreation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.mobile.profilecreator.R
 
 class ProfileCreationActivity : AppCompatActivity() {
 
