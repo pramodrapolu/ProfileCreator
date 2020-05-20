@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="header_text_size">24sp</dimen>
-    <dimen name="header_margin_start">20dp</dimen>
+    <dimen name="header_margin">20dp</dimen>
     <dimen name="header_margin_top">20dp</dimen>
 
     <dimen name="help_text_size">16sp</dimen>
-    <dimen name="help_text_margin_start">20dp</dimen>
+    <dimen name="help_text_margin">20dp</dimen>
     <dimen name="help_text_margin_top">10dp</dimen>
 
     <dimen name="avatar_view_width">120dp</dimen>
     <dimen name="avatar_view_height">160dp</dimen>
-    <dimen name="avatar_view_margin_top">20dp</dimen>
+    <dimen name="avatar_view_margin">20dp</dimen>
     <dimen name="avatar_view_margin_bottom">10dp</dimen>
 
     <dimen name="corner_radius">15dp</dimen>
 
-    <dimen name="input_fields_width">220dp</dimen>
-    <dimen name="input_fields_height">40dp</dimen>
     <dimen name="input_field_hint_text_size">14sp</dimen>
     <dimen name="input_fields_padding">10dp</dimen>
     <dimen name="input_fields_top_margin">10dp</dimen>
     <dimen name="input_field_stroke">1dp</dimen>
 
-    <dimen name="button_width">220dp</dimen>
-    <dimen name="button_marging_bottom">50dp</dimen>
+    <dimen name="button_margin">40dp</dimen>
     <dimen name="button_border_stroke">1dp</dimen>
 
     <dimen name="confirmation_views_text_size">16sp</dimen>
     <dimen name="confirmation_views_margin_top">10dp</dimen>
+    <dimen name="confirmation_views_margin">16dp</dimen>
 </resources>

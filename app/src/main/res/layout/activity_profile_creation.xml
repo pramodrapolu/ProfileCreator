@@ -1,68 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profilecreation.ProfileCreationActivity">
+    android:fillViewport="true">
 
-    <include
-        android:id="@+id/header_layout"
-        layout="@layout/header_layout"/>
-
-    <EditText
-        android:id="@+id/first_name_field"
-        android:hint="@string/first_name_hint"
-        style="@style/InputFieldsStyle"
-        android:inputType="text"
-        android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_layout" />
-
-    <EditText
-        android:id="@+id/email_field"
-        android:hint="@string/email_hint"
-        style="@style/InputFieldsStyle"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_name_field" />
-
-    <EditText
-        android:id="@+id/password_field"
-        android:hint="@string/password_hint"
-        style="@style/InputFieldsStyle"
-        android:inputType="textPassword"
-        android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_field" />
-
-    <EditText
-        android:id="@+id/website_field"
-        android:hint="@string/website_hint"
-        style="@style/InputFieldsStyle"
-        android:inputType="textWebEditText"
-        android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_field" />
-
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="@dimen/button_width"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/button_marging_bottom"
-        android:background="@drawable/button_background"
-        android:text="@string/submit_text"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/website_field"
-        app:layout_constraintVertical_bias="1" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:context=".profilecreation.ProfileCreationActivity">
+
+        <include
+            android:id="@+id/header_layout"
+            layout="@layout/header_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/header_margin"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:layout_marginEnd="@dimen/header_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/first_name_field"
+            style="@style/InputFieldsStyle"
+            android:hint="@string/first_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/header_layout" />
+
+        <EditText
+            android:id="@+id/email_field"
+            style="@style/InputFieldsStyle"
+            android:hint="@string/email_hint"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/first_name_field"
+            app:layout_constraintStart_toStartOf="@+id/first_name_field"
+            app:layout_constraintTop_toBottomOf="@id/first_name_field" />
+
+        <EditText
+            android:id="@+id/password_field"
+            style="@style/InputFieldsStyle"
+            android:hint="@string/password_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/email_field"
+            app:layout_constraintStart_toStartOf="@+id/email_field"
+            app:layout_constraintTop_toBottomOf="@id/email_field" />
+
+        <EditText
+            android:id="@+id/website_field"
+            style="@style/InputFieldsStyle"
+            android:hint="@string/website_hint"
+            android:importantForAutofill="no"
+            android:inputType="textWebEditText"
+            app:layout_constraintEnd_toEndOf="@+id/password_field"
+            app:layout_constraintStart_toStartOf="@+id/password_field"
+            app:layout_constraintTop_toBottomOf="@id/password_field" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:background="@drawable/button_background"
+            android:text="@string/submit_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/website_field"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.82" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

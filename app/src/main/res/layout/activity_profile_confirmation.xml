@@ -1,58 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profileconfirmation.ProfileConfirmationActivity">
+    android:fillViewport="true">
 
-    <include
-        android:id="@+id/header_view"
-        layout="@layout/header_layout" />
-
-    <TextView
-        android:id="@+id/website_confirmation_text"
-        style="@style/ConfirmationTextViewsStyle"
-        android:textColor="@color/website_confirmation_text_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_view"
-        tools:visibility="visible"
-        tools:text="random.com" />
-
-    <TextView
-        android:id="@+id/first_name_confirmation_text"
-        style="@style/ConfirmationTextViewsStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/website_confirmation_text"
-        tools:visibility="visible"
-        tools:text="Mr. Random" />
-
-    <TextView
-        android:id="@+id/email_confirmation_text"
-        style="@style/ConfirmationTextViewsStyle"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_name_confirmation_text"
-        tools:visibility="visible"
-        tools:text="random@gmail.com" />
-
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="@dimen/button_width"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/button_marging_bottom"
-        android:background="@drawable/button_background"
-        android:text="@string/sign_in"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_confirmation_text"
-        app:layout_constraintVertical_bias="1" />
+        tools:context=".profileconfirmation.ProfileConfirmationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/header_view"
+            layout="@layout/header_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/header_margin"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:layout_marginEnd="@dimen/header_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/website_confirmation_text"
+            style="@style/ConfirmationTextViewsStyle"
+            android:textColor="@color/website_confirmation_text_color"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/header_view"
+            tools:text="random.com"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/first_name_confirmation_text"
+            style="@style/ConfirmationTextViewsStyle"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/website_confirmation_text"
+            tools:text="Mr. Random"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/email_confirmation_text"
+            style="@style/ConfirmationTextViewsStyle"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/first_name_confirmation_text"
+            tools:text="random@gmail.com"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:background="@drawable/button_background"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/email_confirmation_text"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.82" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
