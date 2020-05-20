@@ -46,8 +46,8 @@ class ProfileCreationViewModel : ViewModel() {
     private var helpText = MutableLiveData<String>()
     var helpTextLiveData: LiveData<String> = helpText
 
-    private var avatarImage = MutableLiveData<Bitmap>()
-    var avatarImageLiveData: LiveData<Bitmap> = avatarImage
+    private var avatarImage = MutableLiveData<String>()
+    var avatarImageLiveData: LiveData<String> = avatarImage
 
     /**
      * Can be used to set the static data to the View or do anything during the start of the Activity
@@ -204,10 +204,6 @@ class ProfileCreationViewModel : ViewModel() {
     }
 
     private fun handlePhoto() {
-        Utils.getDecodedFile(currentPhotoPath)?.let {
-            avatarImage.value = it
-        } ?: run {
-            Log.e("ProfileCreationVM", "Something went wrong while setting image")
-        }
+        avatarImage.value = currentPhotoPath
     }
 }

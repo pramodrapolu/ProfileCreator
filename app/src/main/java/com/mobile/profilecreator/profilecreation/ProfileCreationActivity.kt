@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.mobile.profilecreator.R
 
 class ProfileCreationActivity : AppCompatActivity() {
@@ -104,7 +105,7 @@ class ProfileCreationActivity : AppCompatActivity() {
         })
 
         profileCreationViewModel.avatarImageLiveData.observe(this, Observer {
-            avatarView.setImageBitmap(it)
+            Glide.with(this).load(it).into(avatarView)
             avatarView.visibility = View.VISIBLE
             tapView.visibility = View.GONE
         })
