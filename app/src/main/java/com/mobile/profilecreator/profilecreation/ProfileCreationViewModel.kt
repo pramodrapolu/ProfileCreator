@@ -19,6 +19,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mobile.profilecreator.R
+import com.mobile.profilecreator.profileconfirmation.ProfileConfirmationActivity
 import com.mobile.profilecreator.utils.Utils
 import java.io.File
 import java.io.IOException
@@ -42,7 +43,7 @@ class ProfileCreationViewModel : ViewModel() {
     private var headerText = MutableLiveData<String>()
     var headerTextLiveData: LiveData<String> = headerText
 
-    private  var helpText = MutableLiveData<String>()
+    private var helpText = MutableLiveData<String>()
     var helpTextLiveData: LiveData<String> = helpText
 
     private var avatarImage = MutableLiveData<Bitmap>()
@@ -81,13 +82,29 @@ class ProfileCreationViewModel : ViewModel() {
     ) {
         if (emailText.isNotEmpty() && passwordText.isNotEmpty()) {
             if (Utils.isValidEmailAddress(emailText)) {
-                // TODO: Start the confirmation screen
-                Toast.makeText(context, "Coming Soon...", Toast.LENGTH_SHORT).show()
+                // Start the ProfileConfirmationActivity
+                context.startActivity(
+                    ProfileConfirmationActivity.createStartIntent(
+                        context,
+                        currentPhotoPath,
+                        firstNameText,
+                        emailText,
+                        websiteText
+                    )
+                )
             } else {
-                Toast.makeText(context, "Please check the entered Email Address", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "Please check the entered Email Address",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         } else {
-            Toast.makeText(context, "Email Address and password are mandatory fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                "Email Address and password are mandatory fields",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -108,8 +125,12 @@ class ProfileCreationViewModel : ViewModel() {
                 } else {
                     // Permission denied! Do nothing. If the user wants to take picture again we will
                     // be requesting the permission again.
-                    Toast.makeText(context, "Permission is Denied. If ever you want to add a " +
-                            "picture go to settings and grant the permission first.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        context,
+                        "Permission is Denied. If ever you want to add a " +
+                                "picture go to settings and grant the permission first.",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
                 return
             }
@@ -132,7 +153,8 @@ class ProfileCreationViewModel : ViewModel() {
      * Requests the Camera Permission
      */
     private fun requestPermissionForCamera(context: Activity) {
-        ActivityCompat.requestPermissions(context,
+        ActivityCompat.requestPermissions(
+            context,
             arrayOf(Manifest.permission.CAMERA),
             REQUEST_CAMERA_PERMISSION
         )
@@ -153,12 +175,13 @@ class ProfileCreationViewModel : ViewModel() {
                 // Continue only if the File was successfully created
                 photoFile?.also { file ->
                     val photoURI: Uri = FileProvider.getUriForFile(
-                            context,
+                        context,
                         FILE_PROVIDER_AUTHORITY,
-                            file
+                        file
                     )
                     captureImageIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    context.startActivityForResult(captureImageIntent,
+                    context.startActivityForResult(
+                        captureImageIntent,
                         REQUEST_TAKE_PHOTO
                     )
                 }
@@ -173,7 +196,7 @@ class ProfileCreationViewModel : ViewModel() {
         return File.createTempFile(
             PROFILE_PIC_NAME,
             PROFILE_PIC_FORMAT,
-                storageDir
+            storageDir
         ).apply {
             // Save a file: path for use with ACTION_VIEW intents
             currentPhotoPath = absolutePath
@@ -183,7 +206,7 @@ class ProfileCreationViewModel : ViewModel() {
     private fun handlePhoto() {
         Utils.getDecodedFile(currentPhotoPath)?.let {
             avatarImage.value = it
-        }?: run {
+        } ?: run {
             Log.e("ProfileCreationVM", "Something went wrong while setting image")
         }
     }

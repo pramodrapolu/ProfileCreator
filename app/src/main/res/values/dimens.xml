@@ -25,4 +25,7 @@
     <dimen name="button_width">220dp</dimen>
     <dimen name="button_marging_bottom">50dp</dimen>
     <dimen name="button_border_stroke">1dp</dimen>
+
+    <dimen name="confirmation_views_text_size">16sp</dimen>
+    <dimen name="confirmation_views_margin_top">10dp</dimen>
 </resources>

@@ -11,5 +11,5 @@
     <color name="tap_avatar_view_color">#cacccb</color>
     <color name="edit_text_border_color">#b8b6b6</color>
     <color name="submit_button_color">#f55656</color>
-
+    <color name="website_confirmation_text_color">#5fcff5</color>
 </resources>

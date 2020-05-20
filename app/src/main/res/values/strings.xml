@@ -11,4 +11,10 @@
     <string name="password_hint">Password</string>
     <string name="website_hint">Website</string>
     <string name="submit_text">Submit</string>
+
+    <string name="hello_text">Hello!</string>
+    <string name="hello_text_with_name">Hello, %s!</string>
+    <string name="confirmation_help_text">Your super-awesome portfolio has been successfully submitted! The preview below is what the community will see!</string>
+    <string name="website_confirmation_text"><u>%s</u></string>
+    <string name="sign_in">Sign In</string>
 </resources>
